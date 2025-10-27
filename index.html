@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>欢迎来到我的个人主页</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+                <li><a href="#contact">联系我</a></li>
+                <li><a href="./myproblem.html">小问题</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>首页</h2>
+            <p>这里是我的个人主页，展示我的技能和项目。</p>
+            <p>你可以在导航栏中找到关于我的更多信息，以及我的作品集和联系我。</p>
+            <p>本人拥有一定的C语言编程能力与开发经验,能进行基础的C语言程序开发</p>
+            <p>具有团队协作能力,能与他人合作完成项目</p>
+        </section>
+        <section id="about">
+                <h2>关于我</h2>
+            <div>
+                <p><strong>我是一名小码农</strong></p>
+                <p><strong>写代码是我的爱好，进大厂是我的终极目标</strong></p>
+                <p> <strong>同时我还有一个特别的身份，那就是我乃羽球坛冉冉升起的巨星，吾为工商怒吼的小博尔特</strong></p>
+                <p> <strong>实不相瞒，其实，林丹和博尔特退役的原因都是因为看到了我，他们自愧不如</strong></p>
+            </div> 
+        </section>
+
+         <section id="portfolio">
+                 <h2>作品集</h2>
+            <section> 
+            <div class="project-grid">
+                <div class="project-item">
+                    <div style="display: flex; gap: 20px; align-items: flex-start;">
+                        <div style="flex: 1; display: flex; flex-direction: column;">
+                            <h3>Snake Game</h3>
+                            <p>我自己开发的贪吃蛇游戏。</p>
+                            <p>与其他的贪吃蛇游戏不同，这条贪吃蛇在吃完食物后身体会进行一次分裂</p>
+                            <p>而他分裂所产生的身体也会成为新的障碍物</p>
+                            <p>难度的增加换来的也是游戏趣味性的提升，怎样，要来一局酣畅淋漓的贪吃蛇游戏吗</p>
+                            <h4>原理</h4>
+                            <p>暂时不写了</p>
+                            <div style="margin-top: auto; align-self: flex-start;">
+                                <a href="downloads/snake_by_myself.zip" download class="download-link">下载</a>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <video width="80%" autoplay loop muted controls>
+                                <source src="video/snake.mp4" type="video/mp4">
+                                您的浏览器不支持视频标签。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <section>
+            <div class="project-item">
+                <h3>Hack Game</h3>
+                <p>这个是我的贪吃蛇游戏的外挂</p>
+                <p>它的效果是修改历史最高分</p>
+                <p>实力的不足可以由科技来弥补，嘿嘿嘿</p>
+                <h4>原理</h4>
+                <p>通过C++的fstream中的函数来调用存储分数的文件,最后再将修改后的分数写入文件中</p>
+                <p>由于存储分数的文件只能由二进制文件来存放,而常规普通文本文件可能会导致文件无法被系统识别</p>
+                <p>所以通过寻找存储分数的文件然后再来修改分数是无法实现的</p>
+                <P>需要你先通过此hack程序将你原来历史最高分消去,然后再将你想要实现的分数以二进制形式写入文件中</P>
+                <p>最后再由系统识别才能成功表示出来</p>
+                <div style="text-align: right;">
+                <a href="downloads/hack.zip" download class="download-link">下载</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="project-item">
+                <h3>Tic Tac Toe</h3>
+                <p>经典的井字棋小游戏</p>
+                <p>对手是人机</p>
+                <p>但不代表你真的能将它当人机来小看哦</p>
+                <h4>人机下子原理</h4>
+                <p>通过C的随机数函数来实现人机对弈</p>
+                <p>只通过随机函数来实现人机下子会使游戏趣味大大降低,所以我抛弃了这种用法</p>
+                <p>我先让电脑分析当前局面状况,让它代入玩家的身份,并判断假设下哪一步会导致玩家的胜利</p>
+                <p>随后将可能导致玩家胜利的位置提前占据,防止玩家胜利</p>
+                <p>但只防守是很难取得胜利的,所以我让电脑先行判断目前棋局的状况,分析哪一步可能会导致玩家方胜利</p>
+                <p>随后占据那个位置,取得胜利</p>
+                <p>并且为了增加井字棋游戏的乐趣,我增加了一个电脑语言对话效果</p>
+                <h5>之前一不小心把最后一版的源码弄丢了,所以这个只能是阉割版了 (╥﹏╥)</h5>
+                <div style="text-align: right;">
+                    <a href="downloads/tic_toc_toe.zip" download class="download-link">下载</a>
+                </div>
+            </div>
+        </section>
+    </section>
+         
+        <section id="contact">
+            <h2>联系我</h2>
+            <p>您可以通过以下方式联系我：</p>
+            <ul>
+                <li>Email:1bighai666@gmail.com(不过我用邮箱比较少)</li>
+                <li>GitHub: 这个以后写</li>
+                <li>WeChat: wanghaidashauige666</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 我的个人主页. All rights reserved.</p>
+    </footer>
+</body>
+</html>
