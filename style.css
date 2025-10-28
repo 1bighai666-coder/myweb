@@ -55,13 +55,29 @@ section {
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 1em 0;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.download-link {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 10px; /* 添加一些上边距，避免紧贴内容 */
+    border-radius: 5px; /* 可选：添加圆角 */
+    text-align: center;
+}
+
+.download-link:hover {
+    background-color: #555; /* 可选：鼠标悬停时的效果 */
 }
 .center-block {
     width: 50%; /* 或者任何固定宽度，例如 600px */
