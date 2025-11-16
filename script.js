@@ -22,4 +22,36 @@ document.addEventListener('DOMContentLoaded', () => {
             projectGrid.appendChild(projectElement);
         });
     }
+
+    // 学习记录：加载、提交与展示（仅在该页存在相关元素时生效）
+    const form = document.getElementById('learning-form');
+    const input = document.getElementById('learning-input');
+    const list = document.getElementById('learning-list');
+
+    function loadRecords() {
+        const items = JSON.parse(localStorage.getItem('learningRecords') || '[]');
+        if (list) {
+            list.innerHTML = '';
+            items.forEach(({ date, text }) => {
+                const li = document.createElement('li');
+                li.textContent = `${date}：${text}`;
+                list.appendChild(li);
+            });
+        }
+    }
+
+    if (form && input && list) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = input.value.trim();
+            if (!text) return;
+            const date = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+            const records = JSON.parse(localStorage.getItem('learningRecords') || '[]');
+            records.unshift({ date, text });
+            localStorage.setItem('learningRecords', JSON.stringify(records));
+            input.value = '';
+            loadRecords();
+        });
+        loadRecords();
+    }
 });
